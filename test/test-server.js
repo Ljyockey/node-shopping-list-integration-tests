@@ -150,6 +150,7 @@ describe('Recipes', function() {
   after(function() {
     return closeServer();
   });
+  //GET test
   it('should list all Recipe items in GET request', function() {
     return chai.request(app)
     .get('/recipes')
@@ -165,6 +166,7 @@ describe('Recipes', function() {
       });
     });
   });
+  //POST test
   it('should add Recipe items in POST request', function() {
     const newItem = {name: 'lemonade', ingredients: ['lemons', 'water', 'sugar']};
     return chai.request(app)
@@ -179,6 +181,7 @@ describe('Recipes', function() {
       res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
     });
   });
+  //PUT test
   it('should update Recipe items in PUT request',function() {
     const updateData = {
       name: 'cookies',
@@ -198,6 +201,7 @@ describe('Recipes', function() {
       res.body.should.deep.equal(updateData);
     });
   });
+  //DELETE test
   it('should remove Recipe items in DELETE request', function() {
     return chai.request(app)
     .get('/recipes')
