@@ -198,6 +198,17 @@ describe('Recipes', function() {
       res.body.should.deep.equal(updateData);
     });
   });
+  it('should remove Recipe items in DELETE request', function() {
+    return chai.request(app)
+    .get('/recipes')
+    .then(function(res) {
+      return chai.request(app)
+      .delete(`/recipes/${res.body[0].id}`);
+    })
+    .then(function(res) {
+      res.should.have.status(204);
+    });
+  });
 });
 
 
