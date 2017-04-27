@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: UBlMQJ9c3qUa9kkLFZTuxvW/zcjX/lixNNEqabkKvjCPGChRr11Np6ruJpey7NEXyvSv7+1PgUX29AJlsG5Z8DVe7euuC1tGvDTOd39DzNIkZeIEMNNHQFWpluEIqTBPAl1qDipGvFbTNMfzRWf3T+Dfil4ZNyxsNCvCwPprSlp9sDMk7VDtC+K9rvSBCc/LC1oVwr12WpRTnnkg6Xu3TG6EGnZG8M8PPPCrCBw+bmnC0FtjmGt9c+DlgvlRxerddAApjA1P23e2vdRScM0PIk+/zITymr53BhN2O6pM0jqDWik2RHayu/wXNs1Ce3Mjbi4L0CjzSAHd5hOpHEHSHw8/6C96FCoIq6NfcdySvpYXuJgNMa7FzH3tRSOfIMc2aU0j3gwGnPvGVG1Upuv3+uG3J8SoTStLGHfMIRk3oXcp2CTrSI9vEpKlU4zs6djdnuG7NWmL+jNaVKuGyx0COAYZy2U3rHKHc6nlJzJRtNqkSHq/m/VJz4UqKfzzq2iyIjCW0W1ZXmeLTbG4jN4S9+9A30vhQrmX/a9ZAscIhR5l7BGEwFnONtCVrLNWYYGwxGwwNcecjNay2cynsFj5uA2qpKEy0getdw7TlImv+9LtXP5V+h3Swqdf5yZZJTDTjYA6tGGdOjMmJYFVE9DmTlWwYIVbOp7rG7PhHgOAEw8=
+  app: young-brushlands-25660
+  on:
+    repo: Ljyockey/node-shopping-list-integration-tests
