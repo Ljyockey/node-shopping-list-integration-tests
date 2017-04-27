@@ -179,6 +179,25 @@ describe('Recipes', function() {
       res.body.should.deep.equal(Object.assign(newItem, {id: res.body.id}));
     });
   });
+  it('should update Recipe items in PUT request',function() {
+    const updateData = {
+      name: 'cookies',
+      ingredients: ['dough', 'oven']
+    };
+    return chai.request(app)
+    .get('/recipes')
+    .then(function(res) {
+      updateData.id = res.body[0].id;
+      return chai.request(app)
+      .put(`/recipes/${updateData.id}`)
+      .send(updateData);
+    })
+    .then(function(res) {
+      res.should.have.status(200);
+      res.should.be.a('object');
+      res.body.should.deep.equal(updateData);
+    });
+  });
 });
 
 
